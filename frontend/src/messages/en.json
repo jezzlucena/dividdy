@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "title": "Dividdy - Split Expenses Easily",
+    "description": "Simplify managing and settling shared expenses for groups. Track who paid for what and calculate who owes whom."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "or": "or",
+    "total": "Total",
+    "amount": "Amount",
+    "date": "Date",
+    "description": "Description",
+    "category": "Category",
+    "currency": "Currency",
+    "members": "Members",
+    "share": "Share",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "noData": "No data available"
+  },
+  "home": {
+    "hero": {
+      "badge": "No signup required",
+      "title": {
+        "line1": "Split expenses",
+        "highlight": "effortlessly",
+        "line2": "with friends"
+      },
+      "subtitle": "Track group expenses, calculate fair splits, and settle debts with ease. No more awkward money conversations.",
+      "cta": "Create a Group"
+    },
+    "features": {
+      "title": "How it works",
+      "subtitle": "Simple, transparent expense sharing in three easy steps",
+      "groups": {
+        "title": "Create a Group",
+        "description": "Start a group for your trip, apartment, or any shared activity. Invite members with a simple link."
+      },
+      "expenses": {
+        "title": "Add Expenses",
+        "description": "Log who paid for what. Split equally, by percentage, shares, or itemize individual costs."
+      },
+      "settlement": {
+        "title": "Settle Up",
+        "description": "See who owes whom at a glance. We minimize transactions so settling is quick and easy."
+      }
+    },
+    "benefits": {
+      "title": "Why choose Dividdy?",
+      "instant": {
+        "title": "Instant Setup",
+        "description": "Create a group and start tracking in seconds"
+      },
+      "noSignup": {
+        "title": "No Signup Required",
+        "description": "Just share the link, no accounts needed"
+      },
+      "multiCurrency": {
+        "title": "Multi-Currency",
+        "description": "Support for international trips and expenses"
+      }
+    },
+    "cta": {
+      "title": "Ready to simplify your expenses?",
+      "subtitle": "Create your first group and start tracking expenses in seconds.",
+      "button": "Get Started Free"
+    }
+  },
+  "header": {
+    "tagline": "Split expenses easily"
+  },
+  "footer": {
+    "tagline": "Simplify your shared expenses",
+    "copyright": "© {year} Dividdy. All rights reserved.",
+    "links": {
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
+  "createGroup": {
+    "title": "Create a New Group",
+    "groupName": "Group Name",
+    "groupNamePlaceholder": "e.g., Summer Trip 2024",
+    "baseCurrency": "Base Currency",
+    "initialMembers": "Group Members",
+    "addMember": "Add Member",
+    "memberPlaceholder": "Member name",
+    "minMembers": "Add at least 2 members to create a group",
+    "creating": "Creating...",
+    "create": "Create Group"
+  },
+  "group": {
+    "shareLink": "Share this link to invite members",
+    "expenses": "Expenses",
+    "balances": "Balances",
+    "settle": "Settle",
+    "settings": "Settings",
+    "addExpense": "Add Expense",
+    "noExpenses": "No expenses yet",
+    "noExpensesDescription": "Add your first expense to get started",
+    "totalExpenses": "Total Expenses",
+    "yourBalance": "Your Balance"
+  },
+  "expense": {
+    "title": "Expense Details",
+    "create": "Add Expense",
+    "edit": "Edit Expense",
+    "description": "Description",
+    "descriptionPlaceholder": "e.g., Dinner at restaurant",
+    "amount": "Amount",
+    "currency": "Currency",
+    "date": "Date",
+    "category": "Category",
+    "paidBy": "Paid by",
+    "splitMethod": "Split Method",
+    "splitAmong": "Split among",
+    "selectAll": "Select All",
+    "methods": {
+      "equal": "Equal",
+      "percentage": "Percentage",
+      "shares": "Shares",
+      "exact": "Exact Amounts",
+      "itemized": "Itemized"
+    },
+    "equalDescription": "Split equally among selected members",
+    "percentageDescription": "Assign percentages to each member",
+    "sharesDescription": "Assign share units (e.g., 2x share)",
+    "exactDescription": "Specify exact amount for each member",
+    "itemizedDescription": "Add items and assign to members",
+    "percentageTotal": "Total: {total}%",
+    "percentageMustBe100": "Percentages must add up to 100%",
+    "addItem": "Add Item",
+    "itemName": "Item name",
+    "assignTo": "Assign to",
+    "saving": "Saving...",
+    "deleting": "Deleting..."
+  },
+  "balances": {
+    "title": "Balances",
+    "subtitle": "See who owes whom in your group",
+    "youOwe": "You owe",
+    "owesYou": "Owes you",
+    "settled": "All settled",
+    "isOwed": "is owed",
+    "owes": "owes",
+    "netBalance": "Net Balance",
+    "allSettled": "Everyone is settled up!",
+    "allSettledDescription": "No outstanding balances in this group"
+  },
+  "settlement": {
+    "title": "Settle Up",
+    "subtitle": "Simplified transactions to settle all debts",
+    "suggestedPayments": "Suggested Payments",
+    "pays": "pays",
+    "noSettlementsNeeded": "No settlements needed",
+    "noSettlementsDescription": "Everyone is already settled up!",
+    "markAsPaid": "Mark as Paid",
+    "minimizedTransactions": "We've minimized the number of transactions needed"
+  },
+  "settings": {
+    "title": "Group Settings",
+    "groupInfo": "Group Information",
+    "groupName": "Group Name",
+    "baseCurrency": "Base Currency",
+    "members": "Members",
+    "addMember": "Add Member",
+    "removeMember": "Remove",
+    "cannotRemove": "Cannot remove members with expenses",
+    "categories": "Categories",
+    "addCategory": "Add Category",
+    "dangerZone": "Danger Zone",
+    "deleteGroup": "Delete Group",
+    "deleteWarning": "This action cannot be undone. All expenses and data will be permanently deleted."
+  },
+  "categories": {
+    "food": "Food & Drinks",
+    "transport": "Transport",
+    "accommodation": "Accommodation",
+    "entertainment": "Entertainment",
+    "shopping": "Shopping",
+    "utilities": "Utilities",
+    "health": "Health",
+    "other": "Other"
+  },
+  "errors": {
+    "groupNotFound": "Group not found",
+    "expenseNotFound": "Expense not found",
+    "invalidAmount": "Please enter a valid amount",
+    "requiredField": "This field is required",
+    "networkError": "Network error. Please try again.",
+    "serverError": "Server error. Please try again later."
+  }
+}

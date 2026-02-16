@@ -1,70 +1,76 @@
-version: '3.8'
-
 services:
-  # PostgreSQL Database
-  db:
-    image: postgres:16-alpine
+  # MongoDB Database
+  mongodb:
+    image: mongo:4.4.18
+    container_name: dividdy-mongodb
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${DB_USER:-dividdy}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-dividdy_secret}
-      POSTGRES_DB: ${DB_NAME:-dividdy}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-changeme}
+      MONGO_INITDB_DATABASE: dividdy
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - dividdy-network
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER:-dividdy} -d ${DB_NAME:-dividdy}']
+      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/dividdy --quiet
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 10s
 
-  # API Server
-  api:
+  # Backend API
+  backend:
     build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file: ./backend/.env
+    container_name: dividdy-backend
     restart: unless-stopped
-    environment:
-      NODE_ENV: production
-      PORT: 4000
-      DATABASE_URL: postgresql://${DB_USER:-dividdy}:${DB_PASSWORD:-dividdy_secret}@db:5432/${DB_NAME:-dividdy}?schema=public
-      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
-      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change-me-in-production-refresh}
-      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-15m}
-      JWT_REFRESH_EXPIRES_IN: ${JWT_REFRESH_EXPIRES_IN:-7d}
-      MAGIC_LINK_SECRET: ${MAGIC_LINK_SECRET:-change-me-in-production-magic}
-      MAGIC_LINK_EXPIRES_IN: ${MAGIC_LINK_EXPIRES_IN:-15m}
-      SMTP_HOST: ${SMTP_HOST:-}
-      SMTP_PORT: ${SMTP_PORT:-587}
-      SMTP_USER: ${SMTP_USER:-}
-      SMTP_PASS: ${SMTP_PASS:-}
-      SMTP_FROM: ${SMTP_FROM:-Dividdy <noreply@dividdy.local>}
-      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
-      UPLOAD_DIR: /app/uploads
-      MAX_FILE_SIZE: ${MAX_FILE_SIZE:-5242880}
-    volumes:
-      - uploads:/app/uploads
     ports:
-      - '${API_PORT:-4000}:4000'
+      - "8092:3001"
     depends_on:
-      db:
+      mongodb:
         condition: service_healthy
+    networks:
+      - dividdy-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
-  # Web Frontend
-  web:
+  # Frontend
+  frontend:
     build:
-      context: .
-      dockerfile: ./apps/web/Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:4000/api}
+        NEXT_PUBLIC_API_URL: http://localhost:8092
+        NEXT_PUBLIC_ADSENSE_CLIENT_ID: ca-pub-8262483117144824
+    env_file: ./frontend/.env
+    container_name: dividdy-frontend
     restart: unless-stopped
-    environment:
-      NODE_ENV: production
     ports:
-      - '${WEB_PORT:-3000}:3000'
+      - "8091:3000"
     depends_on:
-      - api
+      - backend
+    networks:
+      - dividdy-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+networks:
+  dividdy-network:
+    driver: bridge
 
 volumes:
-  postgres_data:
-  uploads:
-
+  mongodb_data:
+    driver: local

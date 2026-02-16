@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "title": "Dividdy - Divide Gastos Fácilmente",
+    "description": "Simplifica la gestión y liquidación de gastos compartidos en grupos. Registra quién pagó qué y calcula quién debe a quién."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "add": "Agregar",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "done": "Listo",
+    "or": "o",
+    "total": "Total",
+    "amount": "Monto",
+    "date": "Fecha",
+    "description": "Descripción",
+    "category": "Categoría",
+    "currency": "Moneda",
+    "members": "Miembros",
+    "share": "Compartir",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "noData": "No hay datos disponibles"
+  },
+  "home": {
+    "hero": {
+      "badge": "Sin registro requerido",
+      "title": {
+        "line1": "Divide gastos",
+        "highlight": "sin esfuerzo",
+        "line2": "con amigos"
+      },
+      "subtitle": "Registra gastos grupales, calcula divisiones justas y liquida deudas fácilmente. Sin más conversaciones incómodas sobre dinero.",
+      "cta": "Crear un Grupo"
+    },
+    "features": {
+      "title": "Cómo funciona",
+      "subtitle": "División de gastos simple y transparente en tres pasos",
+      "groups": {
+        "title": "Crea un Grupo",
+        "description": "Inicia un grupo para tu viaje, departamento o cualquier actividad compartida. Invita miembros con un simple enlace."
+      },
+      "expenses": {
+        "title": "Agrega Gastos",
+        "description": "Registra quién pagó qué. Divide equitativamente, por porcentaje, partes o detalla costos individuales."
+      },
+      "settlement": {
+        "title": "Liquida",
+        "description": "Ve quién debe a quién de un vistazo. Minimizamos transacciones para liquidar rápido y fácil."
+      }
+    },
+    "benefits": {
+      "title": "¿Por qué elegir Dividdy?",
+      "instant": {
+        "title": "Configuración Instantánea",
+        "description": "Crea un grupo y empieza a registrar en segundos"
+      },
+      "noSignup": {
+        "title": "Sin Registro",
+        "description": "Solo comparte el enlace, sin cuentas necesarias"
+      },
+      "multiCurrency": {
+        "title": "Multi-Moneda",
+        "description": "Soporte para viajes y gastos internacionales"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para simplificar tus gastos?",
+      "subtitle": "Crea tu primer grupo y empieza a registrar gastos en segundos.",
+      "button": "Comenzar Gratis"
+    }
+  },
+  "header": {
+    "tagline": "Divide gastos fácilmente"
+  },
+  "footer": {
+    "tagline": "Simplifica tus gastos compartidos",
+    "copyright": "© {year} Dividdy. Todos los derechos reservados.",
+    "links": {
+      "privacy": "Privacidad",
+      "terms": "Términos"
+    }
+  },
+  "createGroup": {
+    "title": "Crear Nuevo Grupo",
+    "groupName": "Nombre del Grupo",
+    "groupNamePlaceholder": "ej., Viaje de Verano 2024",
+    "baseCurrency": "Moneda Base",
+    "initialMembers": "Miembros del Grupo",
+    "addMember": "Agregar Miembro",
+    "memberPlaceholder": "Nombre del miembro",
+    "minMembers": "Agrega al menos 2 miembros para crear un grupo",
+    "creating": "Creando...",
+    "create": "Crear Grupo"
+  },
+  "group": {
+    "shareLink": "Comparte este enlace para invitar miembros",
+    "expenses": "Gastos",
+    "balances": "Balances",
+    "settle": "Liquidar",
+    "settings": "Ajustes",
+    "addExpense": "Agregar Gasto",
+    "noExpenses": "Sin gastos aún",
+    "noExpensesDescription": "Agrega tu primer gasto para comenzar",
+    "totalExpenses": "Gastos Totales",
+    "yourBalance": "Tu Balance"
+  },
+  "expense": {
+    "title": "Detalles del Gasto",
+    "create": "Agregar Gasto",
+    "edit": "Editar Gasto",
+    "description": "Descripción",
+    "descriptionPlaceholder": "ej., Cena en restaurante",
+    "amount": "Monto",
+    "currency": "Moneda",
+    "date": "Fecha",
+    "category": "Categoría",
+    "paidBy": "Pagado por",
+    "splitMethod": "Método de División",
+    "splitAmong": "Dividir entre",
+    "selectAll": "Seleccionar Todos",
+    "methods": {
+      "equal": "Igual",
+      "percentage": "Porcentaje",
+      "shares": "Partes",
+      "exact": "Montos Exactos",
+      "itemized": "Por Artículo"
+    },
+    "equalDescription": "Dividir equitativamente entre los seleccionados",
+    "percentageDescription": "Asignar porcentajes a cada miembro",
+    "sharesDescription": "Asignar unidades de parte (ej., 2x parte)",
+    "exactDescription": "Especificar monto exacto por miembro",
+    "itemizedDescription": "Agregar artículos y asignar a miembros",
+    "percentageTotal": "Total: {total}%",
+    "percentageMustBe100": "Los porcentajes deben sumar 100%",
+    "addItem": "Agregar Artículo",
+    "itemName": "Nombre del artículo",
+    "assignTo": "Asignar a",
+    "saving": "Guardando...",
+    "deleting": "Eliminando..."
+  },
+  "balances": {
+    "title": "Balances",
+    "subtitle": "Ve quién debe a quién en tu grupo",
+    "youOwe": "Debes",
+    "owesYou": "Te debe",
+    "settled": "Todo liquidado",
+    "isOwed": "le deben",
+    "owes": "debe",
+    "netBalance": "Balance Neto",
+    "allSettled": "¡Todos están al día!",
+    "allSettledDescription": "No hay balances pendientes en este grupo"
+  },
+  "settlement": {
+    "title": "Liquidar",
+    "subtitle": "Transacciones simplificadas para liquidar todas las deudas",
+    "suggestedPayments": "Pagos Sugeridos",
+    "pays": "paga a",
+    "noSettlementsNeeded": "No se necesitan liquidaciones",
+    "noSettlementsDescription": "¡Todos ya están al día!",
+    "markAsPaid": "Marcar como Pagado",
+    "minimizedTransactions": "Hemos minimizado el número de transacciones necesarias"
+  },
+  "settings": {
+    "title": "Ajustes del Grupo",
+    "groupInfo": "Información del Grupo",
+    "groupName": "Nombre del Grupo",
+    "baseCurrency": "Moneda Base",
+    "members": "Miembros",
+    "addMember": "Agregar Miembro",
+    "removeMember": "Eliminar",
+    "cannotRemove": "No se pueden eliminar miembros con gastos",
+    "categories": "Categorías",
+    "addCategory": "Agregar Categoría",
+    "dangerZone": "Zona de Peligro",
+    "deleteGroup": "Eliminar Grupo",
+    "deleteWarning": "Esta acción no se puede deshacer. Todos los gastos y datos serán eliminados permanentemente."
+  },
+  "categories": {
+    "food": "Comida y Bebidas",
+    "transport": "Transporte",
+    "accommodation": "Alojamiento",
+    "entertainment": "Entretenimiento",
+    "shopping": "Compras",
+    "utilities": "Servicios",
+    "health": "Salud",
+    "other": "Otro"
+  },
+  "errors": {
+    "groupNotFound": "Grupo no encontrado",
+    "expenseNotFound": "Gasto no encontrado",
+    "invalidAmount": "Por favor ingresa un monto válido",
+    "requiredField": "Este campo es requerido",
+    "networkError": "Error de red. Por favor intenta de nuevo.",
+    "serverError": "Error del servidor. Por favor intenta más tarde."
+  }
+}

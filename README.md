@@ -1,222 +1,169 @@
 # Dividdy
 
-**Free and Open-source Splitwise alternative. Split expenses with friends, track group spending, and settle balances. Self-hostable & privacy-first.**
+An expense splitting web app for groups - track who paid for what and calculate who owes whom.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Dividdy](https://img.shields.io/badge/status-in%20development-blue)
 
 ## Features
 
-- **Group Expenses**: Create groups for trips, roommates, or any shared spending
-- **Smart Splitting**: Split bills equally, by percentage, shares, or exact amounts
-- **Balance Tracking**: Real-time balance calculation with debt simplification
-- **Settlements**: Record payments and track settlement history
-- **Categories**: Organize expenses with customizable categories
-- **Receipt Attachments**: Upload and attach receipts to expenses
-- **Comments**: Add notes and comments to expenses
-- **Privacy First**: Self-host on your own server for complete data control
-- **Modern UI**: Beautiful, responsive interface with dark mode support
+- **No Registration Required** - Create a group and share the link, no accounts needed
+- **Multiple Split Methods** - Equal, percentage, shares, exact amounts, or itemized
+- **Multi-Currency Support** - Track expenses in different currencies with automatic conversion
+- **Simplified Settlements** - Minimized transactions algorithm to settle debts efficiently
+- **Internationalization** - Available in English (US) and Spanish (Latin America)
+- **Ad-Supported** - Google AdSense integration for monetization
 
 ## Tech Stack
 
-- **Frontend**: Next.js 15, React 19, Chakra UI, TypeScript
-- **Backend**: Node.js, Express.js, TypeScript
-- **Database**: PostgreSQL 16 with Prisma ORM
-- **Authentication**: Email/Password + Magic Links (JWT)
-- **Deployment**: Docker Compose
+### Frontend
+- [Next.js 14](https://nextjs.org/) - React framework with App Router
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- [next-intl](https://next-intl-docs.vercel.app/) - Internationalization
+- [Lucide React](https://lucide.dev/) - Icons
 
-## Quick Start
+### Backend
+- [Express.js](https://expressjs.com/) - Node.js web framework
+- [MongoDB](https://www.mongodb.com/) - NoSQL database
+- [Mongoose](https://mongoosejs.com/) - MongoDB ODM
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 20+
-- pnpm 9+
-- PostgreSQL 16+ (or use Docker)
+- Node.js 18+
+- MongoDB (local or Atlas)
+- npm or yarn
 
-### Development Setup
+### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/dividdy.git
-   cd dividdy
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/dividdy.git
+cd dividdy
+```
 
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
+2. Install dependencies:
+```bash
+npm install
+```
 
-3. **Start the database** (using Docker)
-   ```bash
-   docker compose -f docker-compose.dev.yml up -d
-   ```
+3. Set up environment variables:
 
-4. **Configure environment**
-   ```bash
-   cp apps/api/.env.example apps/api/.env
-   # Edit .env with your configuration
-   ```
+**Backend** (`backend/.env`):
+```env
+PORT=3001
+NODE_ENV=development
+MONGODB_URI=mongodb://localhost:27017/dividdy
+FRONTEND_URL=http://localhost:3000
+EXCHANGE_RATE_API_KEY=your_api_key_here  # Optional, from exchangerate-api.com
+```
 
-5. **Run database migrations**
-   ```bash
-   pnpm db:push
-   ```
+**Frontend** (`frontend/.env.local`):
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX  # Optional
+```
 
-6. **Start development servers**
-   ```bash
-   pnpm dev
-   ```
+4. Start MongoDB (if running locally):
+```bash
+mongod
+```
 
-   - Web app: http://localhost:3000
-   - API: http://localhost:4000
-   - MailHog (email testing): http://localhost:8025
+5. Start the development servers:
+```bash
+npm run dev
+```
 
-## Self-Hosting with Docker
+This will start:
+- Frontend at http://localhost:3000
+- Backend at http://localhost:3001
 
-### Quick Deploy
+## Docker Deployment
 
-1. **Create environment file**
-   ```bash
-   cat > .env << EOF
-   # Database
-   DB_USER=dividdy
-   DB_PASSWORD=your-secure-password
-   DB_NAME=dividdy
+For self-hosted deployment using Docker:
 
-   # Security (CHANGE THESE!)
-   JWT_SECRET=$(openssl rand -base64 32)
-   JWT_REFRESH_SECRET=$(openssl rand -base64 32)
-   MAGIC_LINK_SECRET=$(openssl rand -base64 32)
+1. Create a `.env` file in the root directory:
+```env
+MONGO_ROOT_USERNAME=admin
+MONGO_ROOT_PASSWORD=your_secure_password
+FRONTEND_URL=https://your-domain.com
+NEXT_PUBLIC_API_URL=https://your-domain.com
+EXCHANGE_RATE_API_KEY=your_api_key
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX
+```
 
-   # Email (optional, for magic links)
-   SMTP_HOST=smtp.example.com
-   SMTP_PORT=587
-   SMTP_USER=your-email@example.com
-   SMTP_PASS=your-email-password
-   SMTP_FROM=Dividdy <noreply@example.com>
+2. Build and start the containers:
+```bash
+docker-compose up -d --build
+```
 
-   # URLs
-   FRONTEND_URL=https://dividdy.yourdomain.com
-   NEXT_PUBLIC_API_URL=https://dividdy.yourdomain.com/api
-   EOF
-   ```
-
-2. **Deploy with Docker Compose**
-   ```bash
-   docker compose up -d
-   ```
-
-3. **Access Dividdy**
-   - Web app: http://localhost:3000
-   - API: http://localhost:4000
-
-### Production Considerations
-
-- Use a reverse proxy (nginx, Caddy, Traefik) for HTTPS
-- Set strong, unique secrets for JWT and magic link tokens
-- Configure proper SMTP settings for magic link emails
-- Set up regular database backups
-- Consider using an external PostgreSQL instance for data persistence
-
-## Configuration
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `DATABASE_URL` | PostgreSQL connection string | - |
-| `JWT_SECRET` | Secret for access tokens | - |
-| `JWT_REFRESH_SECRET` | Secret for refresh tokens | - |
-| `JWT_EXPIRES_IN` | Access token expiry | `15m` |
-| `JWT_REFRESH_EXPIRES_IN` | Refresh token expiry | `7d` |
-| `MAGIC_LINK_SECRET` | Secret for magic links | - |
-| `MAGIC_LINK_EXPIRES_IN` | Magic link expiry | `15m` |
-| `SMTP_HOST` | SMTP server host | - |
-| `SMTP_PORT` | SMTP server port | `587` |
-| `SMTP_USER` | SMTP username | - |
-| `SMTP_PASS` | SMTP password | - |
-| `SMTP_FROM` | Email sender address | - |
-| `FRONTEND_URL` | Frontend URL for links | `http://localhost:3000` |
-| `UPLOAD_DIR` | Directory for uploads | `./uploads` |
-| `MAX_FILE_SIZE` | Max upload size (bytes) | `5242880` |
-
-## API Documentation
-
-### Authentication
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/auth/register` | POST | Register new user |
-| `/api/auth/login` | POST | Login with email/password |
-| `/api/auth/magic-link` | POST | Request magic link |
-| `/api/auth/verify` | POST | Verify magic link |
-| `/api/auth/refresh` | POST | Refresh access token |
-| `/api/auth/logout` | POST | Logout (revoke tokens) |
-
-### Groups
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/groups` | GET | List user's groups |
-| `/api/groups` | POST | Create new group |
-| `/api/groups/:id` | GET | Get group details |
-| `/api/groups/:id` | PATCH | Update group |
-| `/api/groups/:id` | DELETE | Delete group |
-| `/api/groups/join/:code` | POST | Join group via invite |
-
-### Expenses
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/groups/:id/expenses` | GET | List group expenses |
-| `/api/groups/:id/expenses` | POST | Create expense |
-| `/api/expenses/:id` | PATCH | Update expense |
-| `/api/expenses/:id` | DELETE | Delete expense |
-| `/api/expenses/:id/receipt` | POST | Upload receipt |
-
-### Balances & Settlements
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/groups/:id/balances` | GET | Get group balances |
-| `/api/groups/:id/settlements` | GET | List settlements |
-| `/api/groups/:id/settlements` | POST | Record settlement |
+3. Access the app at http://localhost:3000
 
 ## Project Structure
 
 ```
 dividdy/
-├── apps/
-│   ├── web/                    # Next.js frontend
-│   │   ├── app/                # App router pages
-│   │   ├── components/         # React components
-│   │   ├── lib/                # Utilities & API client
-│   │   └── theme/              # Chakra UI theme
-│   └── api/                    # Express backend
-│       ├── src/
-│       │   ├── routes/         # API route handlers
-│       │   ├── middleware/     # Auth, validation
-│       │   ├── services/       # Business logic
-│       │   └── utils/          # Helpers
-│       └── prisma/
-│           └── schema.prisma   # Database schema
-├── packages/
-│   ├── shared-types/           # Shared TypeScript types
-│   ├── eslint-config/          # Shared ESLint config
-│   └── tsconfig/               # Shared TS configs
-├── docker-compose.yml          # Production deployment
-├── docker-compose.dev.yml      # Development environment
-└── turbo.json                  # Turborepo config
+├── frontend/                 # Next.js application
+│   ├── src/
+│   │   ├── app/             # App router pages
+│   │   ├── components/      # React components
+│   │   ├── hooks/           # Custom hooks
+│   │   ├── lib/             # Utilities, API client
+│   │   ├── messages/        # i18n translations
+│   │   ├── types/           # TypeScript types
+│   │   └── i18n/            # i18n configuration
+│   └── public/
+│
+├── backend/                  # Express API
+│   └── src/
+│       ├── controllers/     # Route handlers
+│       ├── models/          # Mongoose models
+│       ├── routes/          # API routes
+│       └── services/        # Business logic
+│
+└── docker-compose.yml        # Docker configuration
 ```
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/groups` | Create new group |
+| GET | `/api/groups/:shareCode` | Get group details |
+| PUT | `/api/groups/:shareCode` | Update group |
+| DELETE | `/api/groups/:shareCode` | Delete group |
+| POST | `/api/groups/:shareCode/members` | Add member |
+| DELETE | `/api/groups/:shareCode/members/:id` | Remove member |
+| GET | `/api/groups/:shareCode/expenses` | List expenses |
+| POST | `/api/groups/:shareCode/expenses` | Create expense |
+| PUT | `/api/groups/:shareCode/expenses/:id` | Update expense |
+| DELETE | `/api/groups/:shareCode/expenses/:id` | Delete expense |
+| GET | `/api/groups/:shareCode/balances` | Get calculated balances |
+| GET | `/api/groups/:shareCode/settlements` | Get settlement plan |
+| GET | `/api/exchange-rates` | Get exchange rates |
+
+## Split Methods
+
+1. **Equal** - Split equally among selected members
+2. **Percentage** - Assign percentages (must total 100%)
+3. **Shares** - Assign share units (e.g., 2x share for someone)
+4. **Exact Amounts** - Specify exact amount per person
+5. **Itemized** - Add individual items and assign to specific members
+
+## Settlement Algorithm
+
+The app uses a greedy algorithm to minimize the number of transactions needed to settle all debts:
+
+1. Calculate net balance for each member (paid - owes)
+2. Separate into creditors (positive) and debtors (negative)
+3. Match the largest debtor with the largest creditor
+4. Transfer the minimum of their absolute amounts
+5. Repeat until all balances are zero
 
 ## Contributing
 
-Contributions are welcome! Please read our contributing guidelines before submitting a PR.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
@@ -224,5 +171,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Inspired by [Splitwise](https://www.splitwise.com/)
-- Built with [Next.js](https://nextjs.org/), [Chakra UI](https://chakra-ui.com/), [Prisma](https://www.prisma.io/)
+- Inspired by [Spliito](https://spliito.com/)
+- Exchange rates from [exchangerate-api.com](https://www.exchangerate-api.com/)
