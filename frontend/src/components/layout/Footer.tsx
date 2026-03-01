@@ -13,9 +13,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center font-bold text-white text-sm">
-              D
-            </div>
+            <img src="/logo.svg" alt="Dividdy" className="w-8 h-8 rounded-lg" />
             <div>
               <span className="font-display font-semibold">Dividdy</span>
               <p className="text-xs text-surface-500">{t('tagline')}</p>

@@ -23,9 +23,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href={`/${locale}`} className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-primary-500/25 group-hover:shadow-primary-500/40 transition-shadow">
-              D
-            </div>
+            <img src="/logo.svg" alt="Dividdy" className="w-9 h-9 shadow-lg shadow-primary-500/25 group-hover:shadow-primary-500/40 transition-shadow rounded-xl" />
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg leading-tight">Dividdy</span>
               <span className="text-xs text-surface-500 leading-tight hidden sm:block">{t('tagline')}</span>
