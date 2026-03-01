@@ -97,6 +97,7 @@
     "addMember": "Agregar Miembro",
     "memberPlaceholder": "Nombre del miembro",
     "minMembers": "Agrega al menos 2 miembros para crear un grupo",
+    "advanced": "Avanzado",
     "creating": "Creando...",
     "create": "Crear Grupo"
   },
@@ -143,6 +144,7 @@
     "addItem": "Agregar Artículo",
     "itemName": "Nombre del artículo",
     "assignTo": "Asignar a",
+    "advanced": "Avanzado",
     "saving": "Guardando...",
     "deleting": "Eliminando..."
   },
@@ -200,5 +202,91 @@
     "requiredField": "Este campo es requerido",
     "networkError": "Error de red. Por favor intenta de nuevo.",
     "serverError": "Error del servidor. Por favor intenta más tarde."
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 1 de marzo de 2026",
+    "intro": "En Dividdy, nos tomamos tu privacidad en serio. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tu información cuando utilizas nuestro servicio de división de gastos.",
+    "sections": {
+      "informationWeCollect": {
+        "title": "Información que Recopilamos",
+        "content": "Recopilamos solo la información necesaria para proporcionar nuestro servicio. Esto incluye nombres de grupos, nombres de miembros que proporcionas, descripciones de gastos, montos y preferencias de moneda. No requerimos registro de cuenta, direcciones de correo electrónico ni identificación personal para usar Dividdy."
+      },
+      "howWeUse": {
+        "title": "Cómo Usamos tu Información",
+        "content": "La información que proporcionas se utiliza únicamente para calcular divisiones de gastos, rastrear balances y facilitar liquidaciones dentro de tus grupos. No vendemos, alquilamos ni compartimos tus datos con terceros con fines de marketing."
+      },
+      "dataStorage": {
+        "title": "Almacenamiento y Seguridad de Datos",
+        "content": "Tus datos se almacenan en servidores seguros con cifrado estándar de la industria. Los datos del grupo solo son accesibles a través de códigos de compartir únicos. Implementamos medidas técnicas y organizativas apropiadas para proteger tu información contra acceso no autorizado, alteración o destrucción."
+      },
+      "thirdParty": {
+        "title": "Servicios de Terceros",
+        "content": "Podemos utilizar servicios de terceros como proveedores de alojamiento y herramientas de análisis para operar y mejorar Dividdy. Estos servicios pueden tener acceso a tu información solo según sea necesario para realizar sus funciones y están obligados a mantener su confidencialidad. También utilizamos Google AdSense para mostrar anuncios, que pueden usar cookies para servir anuncios basados en tu actividad de navegación."
+      },
+      "yourRights": {
+        "title": "Tus Derechos",
+        "content": "Tienes derecho a acceder, corregir o eliminar tus datos en cualquier momento. Dado que Dividdy no requiere cuentas, simplemente puedes dejar de usar un grupo y sus datos se eliminarán automáticamente después de un período de inactividad. Si necesitas ayuda con la eliminación de datos, contáctanos."
+      },
+      "changes": {
+        "title": "Cambios a Esta Política",
+        "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Notificaremos a los usuarios sobre cualquier cambio material actualizando la fecha en la parte superior de esta página. Tu uso continuado de Dividdy después de que se publiquen los cambios constituye la aceptación de la política actualizada."
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "content": "Si tienes alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de datos, comunícate con nosotros a través de nuestro sitio web. Estamos comprometidos a resolver cualquier inquietud sobre tu privacidad."
+      }
+    }
+  },
+  "terms": {
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización: 1 de marzo de 2026",
+    "intro": "Bienvenido a Dividdy. Al acceder o utilizar nuestro servicio, aceptas estar sujeto a estos Términos de Servicio. Por favor léelos cuidadosamente antes de usar la plataforma.",
+    "sections": {
+      "acceptance": {
+        "title": "Aceptación de los Términos",
+        "content": "Al acceder o utilizar Dividdy, aceptas cumplir y estar sujeto a estos Términos de Servicio y nuestra Política de Privacidad. Si no estás de acuerdo con estos términos, por favor no uses nuestro servicio."
+      },
+      "serviceDescription": {
+        "title": "Descripción del Servicio",
+        "content": "Dividdy es una herramienta gratuita de división de gastos que ayuda a grupos a rastrear gastos compartidos, calcular divisiones justas y determinar montos de liquidación. El servicio se proporciona tal cual y está destinado para uso personal, no comercial. Dividdy no procesa pagos ni maneja transacciones financieras entre usuarios."
+      },
+      "userResponsibilities": {
+        "title": "Responsabilidades del Usuario",
+        "content": "Eres responsable de la precisión de la información que ingresas en Dividdy, incluyendo montos de gastos, nombres de miembros y descripciones. Aceptas no usar el servicio para ningún propósito ilegal o de ninguna manera que pueda dañar, deshabilitar o perjudicar el servicio. Eres responsable de compartir los enlaces de grupo solo con los participantes previstos."
+      },
+      "accounts": {
+        "title": "Grupos y Acceso",
+        "content": "Dividdy no requiere cuentas de usuario. Los grupos se crean con códigos de compartir únicos que proporcionan acceso a los datos del grupo. Eres responsable de mantener seguros tus códigos de compartir de grupo. Cualquier persona con un código de compartir puede ver y modificar los datos del grupo asociado."
+      },
+      "intellectualProperty": {
+        "title": "Propiedad Intelectual",
+        "content": "El servicio de Dividdy, incluyendo su diseño, código, características y contenido, está protegido por leyes de propiedad intelectual. No puedes copiar, modificar, distribuir ni realizar ingeniería inversa de ninguna parte del servicio sin consentimiento previo por escrito."
+      },
+      "limitation": {
+        "title": "Limitación de Responsabilidad",
+        "content": "Dividdy se proporciona tal cual, sin garantías de ningún tipo. No somos responsables de ningún daño que surja del uso o la imposibilidad de usar el servicio, incluyendo pero no limitado a errores en cálculos, pérdida de datos o interrupciones del servicio. Dividdy es una herramienta para rastrear gastos y no constituye asesoramiento financiero."
+      },
+      "disclaimer": {
+        "title": "Descargo de Responsabilidad",
+        "content": "Si bien nos esforzamos por la precisión en los cálculos de gastos, Dividdy no es un servicio financiero y no debe considerarse como el único registro de obligaciones financieras. Los usuarios deben verificar los cálculos importantes de forma independiente. No garantizamos el tiempo de actividad o la disponibilidad del servicio."
+      },
+      "changes": {
+        "title": "Cambios a los Términos",
+        "content": "Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Los cambios serán efectivos inmediatamente después de su publicación en el sitio web. Tu uso continuado de Dividdy después de que se publiquen los cambios constituye la aceptación de los términos modificados."
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "content": "Si tienes alguna pregunta sobre estos Términos de Servicio, comunícate con nosotros a través de nuestro sitio web. Haremos nuestro mejor esfuerzo para atender tus inquietudes de manera oportuna."
+      }
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "status": "Señal Perdida",
+    "title": "Página No Encontrada",
+    "description": "La página que buscas se ha perdido en el vacío. Puede haber sido movida, eliminada, o nunca existió en esta dimensión.",
+    "returnHome": "Volver al Inicio",
+    "coordinates": "ERR::0x1A4 // RUTA_NO_RESUELTA // SECTOR_NULO"
   }
 }

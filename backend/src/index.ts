@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 3001;
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: 60 * 1000, // 1min
+  max: 1000, // Limit each IP to 1000 requests per windowMs
   standardHeaders: true,
   legacyHeaders: false,
 });
@@ -23,7 +23,7 @@ const limiter = rateLimit({
 // Middleware
 app.use(limiter);
 app.use(cors({
-  origin: [process.env.FRONTEND_URL || 'http://localhost:8091', 'http://localhost:3000', 'https://dividdy.com', 'https://www.dividdy.com/'],
+  origin: process.env.HOST_ALLOWLIST?.split(',') || [],
   credentials: true,
 }));
 app.use(express.json());

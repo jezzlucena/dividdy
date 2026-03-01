@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { X, Plus, Trash2 } from 'lucide-react';
+import { X, Plus, Trash2, ChevronDown } from 'lucide-react';
 import { currencies } from '@/i18n/config';
 import { api } from '@/lib/api';
 
@@ -20,6 +20,14 @@ export function CreateGroupModal({ isOpen, onClose, onCreated }: CreateGroupModa
   const [members, setMembers] = useState(['', '']);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [advancedOpen, setAdvancedOpen] = useState(false);
+  const groupNameRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => groupNameRef.current?.focus(), 0);
+    }
+  }, [isOpen]);
 
   const addMember = () => {
     setMembers([...members, '']);
@@ -99,6 +107,7 @@ export function CreateGroupModal({ isOpen, onClose, onCreated }: CreateGroupModa
           <div>
             <label className="label">{t('groupName')}</label>
             <input
+              ref={groupNameRef}
               type="text"
               value={groupName}
               onChange={(e) => setGroupName(e.target.value)}
@@ -106,22 +115,6 @@ export function CreateGroupModal({ isOpen, onClose, onCreated }: CreateGroupModa
               className="input"
               required
             />
-          </div>
-
-          {/* Base Currency */}
-          <div>
-            <label className="label">{t('baseCurrency')}</label>
-            <select
-              value={baseCurrency}
-              onChange={(e) => setBaseCurrency(e.target.value)}
-              className="select"
-            >
-              {currencies.map((currency) => (
-                <option key={currency.code} value={currency.code}>
-                  {currency.code} - {currency.name}
-                </option>
-              ))}
-            </select>
           </div>
 
           {/* Members */}
@@ -157,6 +150,34 @@ export function CreateGroupModal({ isOpen, onClose, onCreated }: CreateGroupModa
               <Plus className="w-4 h-4" />
               {t('addMember')}
             </button>
+          </div>
+
+          {/* Advanced */}
+          <div className="border border-surface-700 rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onClick={() => setAdvancedOpen(!advancedOpen)}
+              className="w-full flex items-center justify-between p-4 text-sm font-medium text-surface-300 hover:bg-surface-800 transition-colors"
+            >
+              {t('advanced')}
+              <ChevronDown className={`w-4 h-4 transition-transform ${advancedOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {advancedOpen && (
+              <div className="px-4 pb-4">
+                <label className="label">{t('baseCurrency')}</label>
+                <select
+                  value={baseCurrency}
+                  onChange={(e) => setBaseCurrency(e.target.value)}
+                  className="select"
+                >
+                  {currencies.map((currency) => (
+                    <option key={currency.code} value={currency.code}>
+                      {currency.code} - {currency.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
           </div>
 
           {error && (

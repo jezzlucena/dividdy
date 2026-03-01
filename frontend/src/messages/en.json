@@ -97,6 +97,7 @@
     "addMember": "Add Member",
     "memberPlaceholder": "Member name",
     "minMembers": "Add at least 2 members to create a group",
+    "advanced": "Advanced",
     "creating": "Creating...",
     "create": "Create Group"
   },
@@ -143,6 +144,7 @@
     "addItem": "Add Item",
     "itemName": "Item name",
     "assignTo": "Assign to",
+    "advanced": "Advanced",
     "saving": "Saving...",
     "deleting": "Deleting..."
   },
@@ -200,5 +202,91 @@
     "requiredField": "This field is required",
     "networkError": "Network error. Please try again.",
     "serverError": "Server error. Please try again later."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: March 1, 2026",
+    "intro": "At Dividdy, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our expense-splitting service.",
+    "sections": {
+      "informationWeCollect": {
+        "title": "Information We Collect",
+        "content": "We collect only the information necessary to provide our service. This includes group names, member names you provide, expense descriptions, amounts, and currency preferences. We do not require account registration, email addresses, or personal identification to use Dividdy."
+      },
+      "howWeUse": {
+        "title": "How We Use Your Information",
+        "content": "The information you provide is used solely to calculate expense splits, track balances, and facilitate settlements within your groups. We do not sell, rent, or share your data with third parties for marketing purposes."
+      },
+      "dataStorage": {
+        "title": "Data Storage and Security",
+        "content": "Your data is stored on secure servers with industry-standard encryption. Group data is accessible only through unique share codes. We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, or destruction."
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "We may use third-party services such as hosting providers and analytics tools to operate and improve Dividdy. These services may have access to your information only as needed to perform their functions and are obligated to maintain its confidentiality. We also use Google AdSense to display advertisements, which may use cookies to serve ads based on your browsing activity."
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "content": "You have the right to access, correct, or delete your data at any time. Since Dividdy does not require accounts, you can simply stop using a group and its data will be automatically removed after a period of inactivity. If you need assistance with data removal, please contact us."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. We will notify users of any material changes by updating the date at the top of this page. Your continued use of Dividdy after changes are posted constitutes acceptance of the updated policy."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about this Privacy Policy or our data practices, please reach out to us through our website. We are committed to resolving any concerns about your privacy."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: March 1, 2026",
+    "intro": "Welcome to Dividdy. By accessing or using our service, you agree to be bound by these Terms of Service. Please read them carefully before using the platform.",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing or using Dividdy, you agree to comply with and be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our service."
+      },
+      "serviceDescription": {
+        "title": "Description of Service",
+        "content": "Dividdy is a free expense-splitting tool that helps groups track shared expenses, calculate fair splits, and determine settlement amounts. The service is provided as-is and is intended for personal, non-commercial use. Dividdy does not process payments or handle financial transactions between users."
+      },
+      "userResponsibilities": {
+        "title": "User Responsibilities",
+        "content": "You are responsible for the accuracy of the information you enter into Dividdy, including expense amounts, member names, and descriptions. You agree not to use the service for any unlawful purpose or in any way that could damage, disable, or impair the service. You are responsible for sharing group links only with intended participants."
+      },
+      "accounts": {
+        "title": "Groups and Access",
+        "content": "Dividdy does not require user accounts. Groups are created with unique share codes that provide access to group data. You are responsible for keeping your group share codes secure. Anyone with a share code can view and modify the associated group data."
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "The Dividdy service, including its design, code, features, and content, is protected by intellectual property laws. You may not copy, modify, distribute, or reverse-engineer any part of the service without prior written consent."
+      },
+      "limitation": {
+        "title": "Limitation of Liability",
+        "content": "Dividdy is provided on an as-is basis without warranties of any kind. We are not liable for any damages arising from the use or inability to use the service, including but not limited to errors in calculations, data loss, or service interruptions. Dividdy is a tool for tracking expenses and does not constitute financial advice."
+      },
+      "disclaimer": {
+        "title": "Disclaimer",
+        "content": "While we strive for accuracy in expense calculations, Dividdy is not a financial service and should not be relied upon as the sole record of financial obligations. Users should verify important calculations independently. We make no guarantees regarding service uptime or availability."
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "content": "We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to the website. Your continued use of Dividdy after changes are posted constitutes acceptance of the modified terms."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have any questions about these Terms of Service, please contact us through our website. We will do our best to address your concerns in a timely manner."
+      }
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "status": "Signal Lost",
+    "title": "Page Not Found",
+    "description": "The page you're looking for has drifted into the void. It may have been moved, deleted, or never existed in this dimension.",
+    "returnHome": "Return Home",
+    "coordinates": "ERR::0x1A4 // ROUTE_NOT_RESOLVED // SECTOR_NULL"
   }
 }

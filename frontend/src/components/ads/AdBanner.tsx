@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface AdBannerProps {
   slot: string;
@@ -16,13 +16,14 @@ declare global {
 
 export function AdBanner({ slot, format = 'auto', className = '' }: AdBannerProps) {
   const adRef = useRef<HTMLDivElement>(null);
+  const insRef = useRef<HTMLModElement>(null);
   const isLoaded = useRef(false);
+  const [adFailed, setAdFailed] = useState(false);
 
   const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
   const isConfigured = clientId && !clientId.includes('XXXX');
 
   useEffect(() => {
-    // Only initialize ads once and only when configured
     if (isLoaded.current || !isConfigured) return;
 
     const initAd = () => {
@@ -33,33 +34,61 @@ export function AdBanner({ slot, format = 'auto', className = '' }: AdBannerProp
         }
       } catch (err) {
         console.error('AdSense error:', err);
+        setAdFailed(true);
       }
     };
 
-    // If adsbygoogle is already loaded, initialize immediately
     if (typeof window !== 'undefined' && window.adsbygoogle) {
       initAd();
     }
-    // Otherwise wait for it to load (handled by onLoad in Script)
   }, [isConfigured]);
 
-  if (!isConfigured) {
-    // Show placeholder in development/when not configured
-    return (
-      <div className={`w-full py-4 ${className}`}>
-        <div className="container mx-auto px-4">
-          <div className="bg-surface-800/30 border border-dashed border-surface-700 rounded-xl h-24 flex items-center justify-center text-surface-500 text-sm">
-            Ad Space
-          </div>
-        </div>
-      </div>
-    );
+  // Observe the ad slot: if AdSense fills it, it gets a height; if it
+  // stays empty or gets data-ad-status="unfilled", collapse the space.
+  useEffect(() => {
+    if (!isConfigured || adFailed) return;
+
+    const ins = insRef.current;
+    if (!ins) return;
+
+    const checkFilled = () => {
+      const status = ins.getAttribute('data-ad-status');
+      if (status === 'unfilled') {
+        setAdFailed(true);
+        return;
+      }
+      if (ins.offsetHeight === 0) {
+        setAdFailed(true);
+      }
+    };
+
+    // Give the ad network time to respond, then check
+    const timer = setTimeout(checkFilled, 3000);
+
+    // Also watch for attribute changes (AdSense sets data-ad-status)
+    const observer = new MutationObserver(() => {
+      const status = ins.getAttribute('data-ad-status');
+      if (status === 'unfilled') {
+        setAdFailed(true);
+      }
+    });
+    observer.observe(ins, { attributes: true, attributeFilter: ['data-ad-status'] });
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [isConfigured, adFailed]);
+
+  if (!isConfigured || adFailed) {
+    return null;
   }
 
   return (
     <div ref={adRef} className={`w-full py-4 ${className}`}>
       <div className="container mx-auto px-4">
         <ins
+          ref={insRef}
           className="adsbygoogle"
           style={{ display: 'block' }}
           data-ad-client={clientId}
