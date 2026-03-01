@@ -281,6 +281,11 @@
       }
     }
   },
+  "shareModal": {
+    "title": "Share Group",
+    "scanQR": "Scan to join this group",
+    "copyLink": "Copy Link"
+  },
   "notFound": {
     "code": "404",
     "status": "Signal Lost",

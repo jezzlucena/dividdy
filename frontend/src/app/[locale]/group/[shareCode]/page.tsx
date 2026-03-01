@@ -3,14 +3,13 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
-import { 
-  Receipt, 
-  Scale, 
-  Banknote, 
-  Settings, 
+import {
+  Receipt,
+  Scale,
+  Banknote,
+  Settings,
   Plus,
   Share2,
-  Copy,
   Check,
   Loader2
 } from 'lucide-react';
@@ -18,6 +17,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ExpenseList } from '@/components/expenses/ExpenseList';
 import { ExpenseModal } from '@/components/expenses/ExpenseModal';
+import { ShareModal } from '@/components/groups/ShareModal';
 import { AdBanner } from '@/components/ads/AdBanner';
 import { api } from '@/lib/api';
 import { formatCurrency } from '@/lib/utils';
@@ -39,7 +39,7 @@ export default function GroupPage() {
   const [error, setError] = useState('');
   const [isExpenseModalOpen, setIsExpenseModalOpen] = useState(false);
   const [editingExpense, setEditingExpense] = useState<any>(null);
-  const [copied, setCopied] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
   useEffect(() => {
     loadGroupData();
@@ -62,13 +62,6 @@ export default function GroupPage() {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleCopyLink = async () => {
-    const url = window.location.href;
-    await navigator.clipboard.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleExpenseCreated = () => {
@@ -158,20 +151,11 @@ export default function GroupPage() {
               
               <div className="flex items-center gap-3">
                 <button
-                  onClick={handleCopyLink}
+                  onClick={() => setIsShareModalOpen(true)}
                   className="btn-secondary text-sm"
                 >
-                  {copied ? (
-                    <>
-                      <Check className="w-4 h-4 text-primary-400" />
-                      {tCommon('copied')}
-                    </>
-                  ) : (
-                    <>
-                      <Share2 className="w-4 h-4" />
-                      {tCommon('share')}
-                    </>
-                  )}
+                  <Share2 className="w-4 h-4" />
+                  {tCommon('share')}
                 </button>
                 <button
                   onClick={() => {
@@ -281,6 +265,12 @@ export default function GroupPage() {
         group={group}
         shareCode={shareCode}
         expense={editingExpense}
+      />
+
+      <ShareModal
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+        url={typeof window !== 'undefined' ? window.location.href : ''}
       />
     </div>
   );

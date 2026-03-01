@@ -281,6 +281,11 @@
       }
     }
   },
+  "shareModal": {
+    "title": "Compartir Grupo",
+    "scanQR": "Escanea para unirte a este grupo",
+    "copyLink": "Copiar Enlace"
+  },
   "notFound": {
     "code": "404",
     "status": "Señal Perdida",

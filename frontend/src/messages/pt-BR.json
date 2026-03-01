@@ -1,0 +1,297 @@
+{
+  "metadata": {
+    "title": "Dividdy - Divida Despesas Facilmente",
+    "description": "Simplifique a gestão e o acerto de despesas compartilhadas em grupos. Registre quem pagou o quê e calcule quem deve a quem."
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "add": "Adicionar",
+    "close": "Fechar",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "done": "Concluído",
+    "or": "ou",
+    "total": "Total",
+    "amount": "Valor",
+    "date": "Data",
+    "description": "Descrição",
+    "category": "Categoria",
+    "currency": "Moeda",
+    "members": "Membros",
+    "share": "Compartilhar",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "noData": "Nenhum dado disponível"
+  },
+  "home": {
+    "hero": {
+      "badge": "Sem cadastro necessário",
+      "title": {
+        "line1": "Divida despesas",
+        "highlight": "sem esforço",
+        "line2": "com amigos"
+      },
+      "subtitle": "Registre despesas em grupo, calcule divisões justas e acerte as contas facilmente. Sem mais conversas constrangedoras sobre dinheiro.",
+      "cta": "Criar um Grupo"
+    },
+    "features": {
+      "title": "Como funciona",
+      "subtitle": "Divisão de despesas simples e transparente em três passos",
+      "groups": {
+        "title": "Crie um Grupo",
+        "description": "Comece um grupo para sua viagem, apartamento ou qualquer atividade compartilhada. Convide membros com um simples link."
+      },
+      "expenses": {
+        "title": "Adicione Despesas",
+        "description": "Registre quem pagou o quê. Divida igualmente, por porcentagem, cotas ou detalhe custos individuais."
+      },
+      "settlement": {
+        "title": "Acerte as Contas",
+        "description": "Veja quem deve a quem de relance. Minimizamos transações para acertar rápido e fácil."
+      }
+    },
+    "benefits": {
+      "title": "Por que escolher o Dividdy?",
+      "instant": {
+        "title": "Configuração Instantânea",
+        "description": "Crie um grupo e comece a registrar em segundos"
+      },
+      "noSignup": {
+        "title": "Sem Cadastro",
+        "description": "Basta compartilhar o link, sem contas necessárias"
+      },
+      "multiCurrency": {
+        "title": "Múltiplas Moedas",
+        "description": "Suporte para viagens e despesas internacionais"
+      }
+    },
+    "cta": {
+      "title": "Pronto para simplificar suas despesas?",
+      "subtitle": "Crie seu primeiro grupo e comece a registrar despesas em segundos.",
+      "button": "Começar Grátis"
+    }
+  },
+  "header": {
+    "tagline": "Divida despesas facilmente"
+  },
+  "footer": {
+    "tagline": "Simplifique suas despesas compartilhadas",
+    "copyright": "© {year} Dividdy. Todos os direitos reservados.",
+    "links": {
+      "privacy": "Privacidade",
+      "terms": "Termos"
+    }
+  },
+  "createGroup": {
+    "title": "Criar Novo Grupo",
+    "groupName": "Nome do Grupo",
+    "groupNamePlaceholder": "ex., Viagem de Verão 2024",
+    "baseCurrency": "Moeda Base",
+    "initialMembers": "Membros do Grupo",
+    "addMember": "Adicionar Membro",
+    "memberPlaceholder": "Nome do membro",
+    "minMembers": "Adicione pelo menos 2 membros para criar um grupo",
+    "advanced": "Avançado",
+    "creating": "Criando...",
+    "create": "Criar Grupo"
+  },
+  "group": {
+    "shareLink": "Compartilhe este link para convidar membros",
+    "expenses": "Despesas",
+    "balances": "Saldos",
+    "settle": "Acertar",
+    "settings": "Configurações",
+    "addExpense": "Adicionar Despesa",
+    "noExpenses": "Nenhuma despesa ainda",
+    "noExpensesDescription": "Adicione sua primeira despesa para começar",
+    "totalExpenses": "Total de Despesas",
+    "yourBalance": "Seu Saldo"
+  },
+  "expense": {
+    "title": "Detalhes da Despesa",
+    "create": "Adicionar Despesa",
+    "edit": "Editar Despesa",
+    "description": "Descrição",
+    "descriptionPlaceholder": "ex., Jantar no restaurante",
+    "amount": "Valor",
+    "currency": "Moeda",
+    "date": "Data",
+    "category": "Categoria",
+    "paidBy": "Pago por",
+    "splitMethod": "Método de Divisão",
+    "splitAmong": "Dividir entre",
+    "selectAll": "Selecionar Todos",
+    "methods": {
+      "equal": "Igual",
+      "percentage": "Porcentagem",
+      "shares": "Cotas",
+      "exact": "Valores Exatos",
+      "itemized": "Por Item"
+    },
+    "equalDescription": "Dividir igualmente entre os selecionados",
+    "percentageDescription": "Atribuir porcentagens a cada membro",
+    "sharesDescription": "Atribuir unidades de cota (ex., 2x cota)",
+    "exactDescription": "Especificar valor exato por membro",
+    "itemizedDescription": "Adicionar itens e atribuir a membros",
+    "percentageTotal": "Total: {total}%",
+    "percentageMustBe100": "As porcentagens devem somar 100%",
+    "addItem": "Adicionar Item",
+    "itemName": "Nome do item",
+    "assignTo": "Atribuir a",
+    "advanced": "Avançado",
+    "saving": "Salvando...",
+    "deleting": "Excluindo..."
+  },
+  "balances": {
+    "title": "Saldos",
+    "subtitle": "Veja quem deve a quem no seu grupo",
+    "youOwe": "Você deve",
+    "owesYou": "Te deve",
+    "settled": "Tudo acertado",
+    "isOwed": "tem a receber",
+    "owes": "deve",
+    "netBalance": "Saldo Líquido",
+    "allSettled": "Todos estão quites!",
+    "allSettledDescription": "Nenhum saldo pendente neste grupo"
+  },
+  "settlement": {
+    "title": "Acertar Contas",
+    "subtitle": "Transações simplificadas para quitar todas as dívidas",
+    "suggestedPayments": "Pagamentos Sugeridos",
+    "pays": "paga a",
+    "noSettlementsNeeded": "Nenhum acerto necessário",
+    "noSettlementsDescription": "Todos já estão quites!",
+    "markAsPaid": "Marcar como Pago",
+    "minimizedTransactions": "Minimizamos o número de transações necessárias"
+  },
+  "settings": {
+    "title": "Configurações do Grupo",
+    "groupInfo": "Informações do Grupo",
+    "groupName": "Nome do Grupo",
+    "baseCurrency": "Moeda Base",
+    "members": "Membros",
+    "addMember": "Adicionar Membro",
+    "removeMember": "Remover",
+    "cannotRemove": "Não é possível remover membros com despesas",
+    "categories": "Categorias",
+    "addCategory": "Adicionar Categoria",
+    "dangerZone": "Zona de Perigo",
+    "deleteGroup": "Excluir Grupo",
+    "deleteWarning": "Esta ação não pode ser desfeita. Todas as despesas e dados serão excluídos permanentemente."
+  },
+  "categories": {
+    "food": "Comida e Bebidas",
+    "transport": "Transporte",
+    "accommodation": "Hospedagem",
+    "entertainment": "Entretenimento",
+    "shopping": "Compras",
+    "utilities": "Serviços",
+    "health": "Saúde",
+    "other": "Outro"
+  },
+  "errors": {
+    "groupNotFound": "Grupo não encontrado",
+    "expenseNotFound": "Despesa não encontrada",
+    "invalidAmount": "Por favor, insira um valor válido",
+    "requiredField": "Este campo é obrigatório",
+    "networkError": "Erro de rede. Por favor, tente novamente.",
+    "serverError": "Erro do servidor. Por favor, tente novamente mais tarde."
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "lastUpdated": "Última atualização: 1 de março de 2026",
+    "intro": "No Dividdy, levamos sua privacidade a sério. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações quando você utiliza nosso serviço de divisão de despesas.",
+    "sections": {
+      "informationWeCollect": {
+        "title": "Informações que Coletamos",
+        "content": "Coletamos apenas as informações necessárias para fornecer nosso serviço. Isso inclui nomes de grupos, nomes de membros que você fornece, descrições de despesas, valores e preferências de moeda. Não exigimos cadastro de conta, endereços de e-mail ou identificação pessoal para usar o Dividdy."
+      },
+      "howWeUse": {
+        "title": "Como Usamos Suas Informações",
+        "content": "As informações que você fornece são usadas exclusivamente para calcular divisões de despesas, acompanhar saldos e facilitar acertos dentro dos seus grupos. Não vendemos, alugamos ou compartilhamos seus dados com terceiros para fins de marketing."
+      },
+      "dataStorage": {
+        "title": "Armazenamento e Segurança de Dados",
+        "content": "Seus dados são armazenados em servidores seguros com criptografia padrão da indústria. Os dados do grupo são acessíveis apenas por meio de códigos de compartilhamento únicos. Implementamos medidas técnicas e organizacionais apropriadas para proteger suas informações contra acesso não autorizado, alteração ou destruição."
+      },
+      "thirdParty": {
+        "title": "Serviços de Terceiros",
+        "content": "Podemos utilizar serviços de terceiros, como provedores de hospedagem e ferramentas de análise, para operar e melhorar o Dividdy. Esses serviços podem ter acesso às suas informações apenas conforme necessário para desempenhar suas funções e são obrigados a manter sua confidencialidade. Também utilizamos o Google AdSense para exibir anúncios, que podem usar cookies para veicular anúncios com base na sua atividade de navegação."
+      },
+      "yourRights": {
+        "title": "Seus Direitos",
+        "content": "Você tem o direito de acessar, corrigir ou excluir seus dados a qualquer momento. Como o Dividdy não exige contas, você pode simplesmente parar de usar um grupo e seus dados serão automaticamente removidos após um período de inatividade. Se precisar de ajuda com a remoção de dados, entre em contato conosco."
+      },
+      "changes": {
+        "title": "Alterações nesta Política",
+        "content": "Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos os usuários sobre quaisquer alterações materiais atualizando a data no topo desta página. O uso continuado do Dividdy após a publicação das alterações constitui aceitação da política atualizada."
+      },
+      "contact": {
+        "title": "Fale Conosco",
+        "content": "Se você tiver alguma dúvida sobre esta Política de Privacidade ou nossas práticas de dados, entre em contato conosco pelo nosso site. Estamos comprometidos em resolver quaisquer preocupações sobre sua privacidade."
+      }
+    }
+  },
+  "terms": {
+    "title": "Termos de Serviço",
+    "lastUpdated": "Última atualização: 1 de março de 2026",
+    "intro": "Bem-vindo ao Dividdy. Ao acessar ou utilizar nosso serviço, você concorda em estar vinculado a estes Termos de Serviço. Por favor, leia-os com atenção antes de usar a plataforma.",
+    "sections": {
+      "acceptance": {
+        "title": "Aceitação dos Termos",
+        "content": "Ao acessar ou utilizar o Dividdy, você concorda em cumprir e estar vinculado a estes Termos de Serviço e à nossa Política de Privacidade. Se você não concordar com estes termos, por favor não use nosso serviço."
+      },
+      "serviceDescription": {
+        "title": "Descrição do Serviço",
+        "content": "O Dividdy é uma ferramenta gratuita de divisão de despesas que ajuda grupos a acompanhar despesas compartilhadas, calcular divisões justas e determinar valores de acerto. O serviço é fornecido como está e é destinado ao uso pessoal e não comercial. O Dividdy não processa pagamentos nem realiza transações financeiras entre usuários."
+      },
+      "userResponsibilities": {
+        "title": "Responsabilidades do Usuário",
+        "content": "Você é responsável pela precisão das informações que insere no Dividdy, incluindo valores de despesas, nomes de membros e descrições. Você concorda em não usar o serviço para qualquer finalidade ilegal ou de qualquer forma que possa danificar, desabilitar ou prejudicar o serviço. Você é responsável por compartilhar os links de grupo apenas com os participantes pretendidos."
+      },
+      "accounts": {
+        "title": "Grupos e Acesso",
+        "content": "O Dividdy não exige contas de usuário. Os grupos são criados com códigos de compartilhamento únicos que fornecem acesso aos dados do grupo. Você é responsável por manter seus códigos de compartilhamento de grupo seguros. Qualquer pessoa com um código de compartilhamento pode visualizar e modificar os dados do grupo associado."
+      },
+      "intellectualProperty": {
+        "title": "Propriedade Intelectual",
+        "content": "O serviço Dividdy, incluindo seu design, código, recursos e conteúdo, é protegido por leis de propriedade intelectual. Você não pode copiar, modificar, distribuir ou fazer engenharia reversa de qualquer parte do serviço sem consentimento prévio por escrito."
+      },
+      "limitation": {
+        "title": "Limitação de Responsabilidade",
+        "content": "O Dividdy é fornecido como está, sem garantias de qualquer tipo. Não somos responsáveis por quaisquer danos decorrentes do uso ou da impossibilidade de uso do serviço, incluindo, mas não se limitando a, erros em cálculos, perda de dados ou interrupções do serviço. O Dividdy é uma ferramenta para acompanhar despesas e não constitui aconselhamento financeiro."
+      },
+      "disclaimer": {
+        "title": "Isenção de Responsabilidade",
+        "content": "Embora nos esforcemos para obter precisão nos cálculos de despesas, o Dividdy não é um serviço financeiro e não deve ser considerado como o único registro de obrigações financeiras. Os usuários devem verificar cálculos importantes de forma independente. Não garantimos o tempo de atividade ou a disponibilidade do serviço."
+      },
+      "changes": {
+        "title": "Alterações nos Termos",
+        "content": "Reservamo-nos o direito de modificar estes Termos de Serviço a qualquer momento. As alterações serão efetivas imediatamente após a publicação no site. O uso continuado do Dividdy após a publicação das alterações constitui aceitação dos termos modificados."
+      },
+      "contact": {
+        "title": "Fale Conosco",
+        "content": "Se você tiver alguma dúvida sobre estes Termos de Serviço, entre em contato conosco pelo nosso site. Faremos o nosso melhor para atender às suas preocupações em tempo hábil."
+      }
+    }
+  },
+  "shareModal": {
+    "title": "Compartilhar Grupo",
+    "scanQR": "Escaneie para entrar neste grupo",
+    "copyLink": "Copiar Link"
+  },
+  "notFound": {
+    "code": "404",
+    "status": "Sinal Perdido",
+    "title": "Página Não Encontrada",
+    "description": "A página que você procura se perdeu no vazio. Ela pode ter sido movida, excluída, ou nunca existiu nesta dimensão.",
+    "returnHome": "Voltar ao Início",
+    "coordinates": "ERR::0x1A4 // ROTA_NAO_RESOLVIDA // SETOR_NULO"
+  }
+}
