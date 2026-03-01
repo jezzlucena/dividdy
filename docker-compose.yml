@@ -11,7 +11,7 @@ services:
     volumes:
       - mongodb_data:/data/db
     ports:
-      - "27017:27017"
+      - "27019:27017"
     networks:
       - dividdy-network
     healthcheck:
@@ -49,7 +49,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_API_URL: http://localhost:8092
+        NEXT_PUBLIC_API_URL: https://api.dividdy.com
         NEXT_PUBLIC_ADSENSE_CLIENT_ID: ca-pub-8262483117144824
     env_file: ./frontend/.env
     container_name: dividdy-frontend

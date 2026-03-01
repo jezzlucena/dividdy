@@ -35,8 +35,10 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
 
   return (
     <html lang={locale} className="dark">
-      <body className="min-h-screen flex flex-col">
+      <head>
         <AdSenseScript />
+      </head>
+      <body className="min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

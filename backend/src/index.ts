@@ -23,7 +23,7 @@ const limiter = rateLimit({
 // Middleware
 app.use(limiter);
 app.use(cors({
-  origin: [process.env.FRONTEND_URL || 'http://localhost:8091', 'http://localhost:3000', 'https://dividdy-api.jezzlucena.com'],
+  origin: [process.env.FRONTEND_URL || 'http://localhost:8091', 'http://localhost:3000', 'https://dividdy.com', 'https://www.dividdy.com/'],
   credentials: true,
 }));
 app.use(express.json());
